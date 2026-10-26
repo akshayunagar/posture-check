@@ -1,0 +1,17 @@
+# Copy to targets.yaml and edit. One block per target.
+#
+#   host        required. hostname or IP.
+#   url         optional. enables the HTTP header checks.
+#   ports       optional. space or comma separated; defaults to a common set.
+#   facts_file  optional. JSON from collect/host_facts.sh; enables host hygiene.
+#   tags        optional. free-form labels.
+
+- host: example.com
+  url: https://example.com
+  ports: 22 80 443
+  tags: public web
+
+- host: 10.0.0.12
+  ports: 22 3306 6379
+  facts_file: facts/db01.json
+  tags: internal database
